@@ -1,7 +1,7 @@
 package facens.arquiteturaweb.aula3.service;
 
 import facens.arquiteturaweb.aula3.modelo.Aluno;
-import facens.arquiteturaweb.aula3.repository.AlunoRepository;
+import facens.arquiteturaweb.aula3.modelo.AlunoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -38,5 +38,10 @@ public class AlunoServiceImpl implements AlunoService {
     @Override
     public Aluno createAluno(Aluno aluno) {
         return alunoRepository.save(aluno);
+    }
+
+    @Override
+    public Aluno removeAluno(int id) {
+        return alunoRepository.delete(id);
     }
 }

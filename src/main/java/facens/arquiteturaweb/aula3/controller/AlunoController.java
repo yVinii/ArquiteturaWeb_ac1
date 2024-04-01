@@ -36,4 +36,13 @@ public class AlunoController {
     public Aluno createAluno(@RequestBody Aluno aluno) {
         return alunoService.createAluno(aluno);
     }
+
+    // Na configuração do endepoint é necessário adicionar entre chaves aonde ficará
+    // na url a variavel configurada abaixo
+    @DeleteMapping("/remove/{id}")
+    // A notação PathVariable permite que a API receba informações que estão
+    // contidas na URL
+    public Aluno removeAluno(@PathVariable int id) {
+        return alunoService.removeAluno(id);
+    }
 }
